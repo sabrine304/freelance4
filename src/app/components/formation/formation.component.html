@@ -1,0 +1,51 @@
+<div class="container">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5 p-3">
+    <h3 class="d-flex justify-content-center mb-5"><u>رزنامة اللقاءات التدريبية</u></h3>
+        <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="schoolId">* المدرسة</label>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="formation.schoolId"
+                        name="schoolId" required>
+                        <option *ngFor="let school of schoolList" style="text-align: right;" value={{school.id}}>
+                            {{school.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dateFormation">* التاريخ</label>
+                        <input class="form-control" type="date" name="dateFormation" id="dateFormation"
+                            #dateFormation="ngModel" [(ngModel)]="formation.dateFormation" required
+                            [class.invalid]="dateFormation.invalid && dateFormation.touched">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="concernedPeople">* المعنيون بالاجتماع</label>
+                        <input class="form-control" type="text" name="concernedPeople" id="concernedPeople"
+                            #concernedPeople="ngModel" [(ngModel)]="formation.concernedPeople" required
+                            [class.invalid]="concernedPeople.invalid && concernedPeople.touched">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="topic">* الموضوع</label>
+                        <input class="form-control" type="text" name="topic" id="topic"
+                            #topic="ngModel" [(ngModel)]="formation.topic" required
+                            [class.invalid]="topic.invalid && topic.touched">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="text-align: end;">
+                <button class="btn btn-info  btn-block mt-1" type="submit"
+                 >تسجيل</button>
+              </div>
+        </form>
+    </div>
+    </div>
+</div>

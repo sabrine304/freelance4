@@ -1,0 +1,69 @@
+
+<div class="container mt-5">
+    <h3 style="text-align: center" class="my-4"><u>قائمة المنخرطين</u></h3>
+    <div class="row">
+        <div class="col-md-3 d-grid gap-2 mx-auto">
+            <button type="button" class="btn btn-danger" (click)="getListTeacher()">teacher</button>
+        </div>
+        <div class="col-md-3 d-grid gap-2 mx-auto">
+            <button type="button" class="btn btn-danger" (click)="getListInspector()">inspector</button>
+        </div>
+
+        <div class="col-md-3 d-grid gap-2 mx-auto">
+            <button type="button" class="btn btn-danger" (click)="getListDirector()">director</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid mt-5 offset-md-2">
+   <div class="col-md-8">
+    <div class="row" *ngIf="getTeacher === true">
+        <div class="card">
+            <table class="table table-striped table-hover">
+                <thead>
+                  <tr  style="text-align: end;">
+                    <th></th>
+                    <th>الحالة</th>
+                    <th>الرتبة</th>
+                    <th>المدرسة</th>
+                    <th>الهاتف</th>
+                    <th>البريد الالكتروني</th>
+                    <th>الاسم و اللقب</th>
+                    <th>المعرف الوحيد</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor="let teacher of teacherList" style="text-align: end;">
+                    <td>
+                        <a routerLink="/user-list/teacher-detail/{{teacher.id}}">
+                            <i class="fa fa-backward" aria-hidden="true"></i>
+                       </a>
+                    </td>
+                    <td>{{teacher.validationStatus}}</td>
+                    <td>{{teacher.rankName}}</td>
+                    <td>{{teacher.school}}</td>
+                    <td>{{teacher.phoneNumber}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>{{teacher.fullName}}</td>
+                    <td>{{teacher.identificationCode}}</td>
+                 
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="getInspector === true">
+        <div class="card">
+            inspector
+        </div>
+    </div>
+    
+    <div class="row" *ngIf="getDirector === true">
+        <div class="card">
+            director
+        </div>
+    </div>
+   </div>
+</div>

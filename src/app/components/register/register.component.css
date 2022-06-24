@@ -1,0 +1,22 @@
+label {
+    display: block;
+    text-align: end;
+}
+
+input {
+    text-align: end;
+}
+
+.form-group,h5 {
+    text-align: end;
+}
+.nav {
+    text-align: end; 
+}
+
+.navigation {
+    padding-bottom: 15px;
+}
+body {
+    background-image: url"'(/assets/login2.jpg)'";
+}

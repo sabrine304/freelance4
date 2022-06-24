@@ -1,0 +1,57 @@
+<section class="header"> 
+  <div class="row">
+      <div class="col-md-3 offset-md-9">
+        <p style="text-align: center;">الجمهورية التونسية<br>
+            وزارة التربية<br>
+            التفقدية العامة لبيداغوجيا التربية<br>
+            ادارة التفقدية بالمرحلة الابتدائية
+        </p>
+        <p></p>
+    </div>
+  </div>
+</section>
+
+<section class="part1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 ">
+                <h1 class="mb-5"><u>دائرة الحنشة</u></h1>
+
+<div [style.background-image]="'url(/assets/login2.jpg)'" class="py-2 px-5">
+<form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="container-fluid">
+        <h2 class="form-signin-heading"></h2>
+        <!-- <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div> -->
+        <br>
+        
+        <label for="userName">الاسم كامل</label>
+         <input type="email" id="userName" name="userName" [(ngModel)]="credentials.userName" class="form-control"
+         placeholder="الاسم كامل" required>
+         <br>
+         <label for="password">كملة السر</label>
+         <input type="password" id="password" name="password" [(ngModel)]="credentials.password" class="form-control"
+         placeholder="كلمة السر" required>
+         <br>
+         <hr style="color: white;">
+
+         <a routerLink="/register-home" class="mb-1">مشترك جديد</a>
+         <div class="row">
+             <div class="col-md-4 offset-md-4">
+         <button class="btn btn-lg btn-primary btn-block"  [disabled]="!loginForm.valid">دخول</button>
+
+
+        </div>
+
+        </div>
+    </div>
+
+    <!-- <button type="submit" (click)="getUserConnected(loginForm)">user connected</button> -->
+
+ 
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+

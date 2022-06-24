@@ -1,0 +1,16 @@
+label {
+    display: block;
+    text-align: end;
+}
+
+input {
+    text-align: end;
+}
+
+.form-group,h5 {
+    text-align: end;
+}
+.nav {
+    text-align: end; 
+}
+

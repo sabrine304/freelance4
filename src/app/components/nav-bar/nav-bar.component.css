@@ -1,0 +1,17 @@
+.avbar-nav  {
+    color: white;
+}
+
+.navbar {
+    text-align: end;
+}
+.profile {
+    font-style: oblique;
+    color: white;
+    text-decoration: none;
+}
+
+
+li {
+    margin-left: 15px;
+}

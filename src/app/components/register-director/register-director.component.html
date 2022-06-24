@@ -1,0 +1,307 @@
+
+
+<div [style.background-image]="'url(/assets/login2.jpg)'">
+    <section class="header"> 
+      <div class="row">
+        <div class="col-md-1 px-5 py-2">
+          <a routerLink="/register-home">
+          <i class="fa fa-arrow-left fa-xl" style="color: black;" aria-hidden="true"></i> </a>
+          </div>
+                  <div class="col-md-3 offset-md-8">
+            <p style="text-align: center;" class="mt-1">الجمهورية التونسية<br>
+                وزارة التربية<br>
+                التفقدية العامة لبيداغوجيا التربية<br>
+                ادارة التفقدية بالمرحلة الابتدائية<br><br>
+                <b>(فضاء المدير)</b>
+            </p>
+            <p></p>
+        </div>
+      </div>
+    </section>
+    <section class="navigation">
+    <div class="container py-3">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+  
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link" id="nav-password-tab" data-bs-toggle="tab" data-bs-target="#nav-password" type="button" role="tab" aria-controls="nav-password" aria-selected="false">اختيار كلمة السر</button>
+        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">التفقد</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">الحالة الادارية</button>
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">الحالة العائلية</button>
+  
+      </div>
+    </nav>
+    <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)"> 
+  
+    <div class="tab-content" id="nav-tabContent">
+      <!-- الحالة العائلية -->
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row mt-3">
+          <h5><u>الحالة العائلية</u></h5>
+      </div>
+      <div class="form-group">
+          <label for="fulName">* الاسم و اللقب</label>
+          <input class="form-control" placeholder="الاسم" type="text"
+          name="fulName" id="fulName" #fulName="ngModel" [(ngModel)]="registerDirectorService.formData.fullName" required
+          [class.invalid]="fulName.invalid && fulName.touched" >
+      </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+              <label for="birthDateCountry" class="text-right">مكانها</label>
+              <input class="form-control" type="text" placeholder="مكان الولادة"
+              name="birthDateCountry" id="birthDateCountry" #birthDateCountry="ngModel" [(ngModel)]="registerDirectorService.formData.birthDateCountry"
+              >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="birthDate">تاريخ الولادة</label>
+      <input class="form-control" id="birthDate" type="date" #birthDate="ngModel" name="birthDate"
+      [(ngModel)]="registerDirectorService.formData.birthDate">
+        </div>
+    </div>
+    
+    <div class="row">
+        
+        <div class="col-md-4">
+          <label for="workPartner">(مهنة الزوج (ة</label>
+          <input class="form-control" placeholder="مهنة الزوج" type="text"
+          name="workPartner" id="workPartner" #workPartner="ngModel" [(ngModel)]="registerDirectorService.formData.workPartner"
+          [class.invalid]="workPartner.invalid && workPartner.touched" >
+        </div>
+        <div class="col-md-4">
+          <label for="childrenNumber">عدد الأبناء</label>
+          <input class="form-control" placeholder="عدد الأبناء" type="number"
+          name="childrenNumber" id="childrenNumber" #childrenNumber="ngModel" [(ngModel)]="registerDirectorService.formData.childrenNumber"
+          [class.invalid]="childrenNumber.invalid && childrenNumber.touched" >
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+              <label for="familyStatus">الحالة المدنية</label>
+              <input class="form-control" placeholder="الحالة المدنية" type="text"
+              name="familyStatus" id="familyStatus" #familyStatus="ngModel" [(ngModel)]="registerDirectorService.formData.familyStatus"
+              [class.invalid]="familyStatus.invalid && familyStatus.touched" >
+          </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12">
+      <label for="address"> * العنوان الشخصي</label>
+      <input class="form-control" placeholder="العنوان الشخصي" type="text"
+      name="address" id="address" #address="ngModel" [(ngModel)]="registerDirectorService.formData.address" required
+      [class.invalid]="address.invalid && address.touched" >
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+          <label for="phoneNumber"> * رقم الهاتف</label>
+          <input class="form-control" placeholder="رقم الهاتف" type="number"
+          name="phoneNumber" id="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="registerDirectorService.formData.phoneNumber" required
+          [class.invalid]="phoneNumber.invalid && phoneNumber.touched" >
+        </div>
+        <div class="col-md-8">
+          <label for="email"> * العنوان الالكتروني</label>
+          <input class="form-control" placeholder="العنوان الالكتروني" type="email"
+          name="email" id="email" #email="ngModel" [(ngModel)]="registerDirectorService.formData.email"
+           required
+          [class.invalid]="email.invalid && email.touched" >
+        </div>
+    </div>  
+      </div>
+  
+      <!-- الحالة الادارية -->
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        
+  <div class="row mt-3">
+    <h5><u>الحالة الادارية</u></h5>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="hiringDate" class="text-right">تاريخ التعيين</label>
+            <input class="form-control" type="date" name="hiringDate" id="hiringDate"    
+            #hiringDate="ngModel" [(ngModel)]="registerDirectorService.formData.hiringDate" 
+            >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="workPlace">* مركز العمل الحالي</label>
+      <select class="form-select" aria-label="Default select example"  
+      [(ngModel)]="registerDirectorService.formData.schoolId" name="workPlace" required>
+        <option *ngFor="let school of schoolList" style="text-align: right;"
+          value={{school.id}}>{{school.name}}</option>     
+      </select>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="upgradeDate" class="text-right">تاريخ الارتقاء</label>
+            <input class="form-control" type="date" name="upgradeDate" id="upgradeDate"           
+            #upgradeDate="ngModel" [(ngModel)]="registerDirectorService.formData.upgradeDate"
+            >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="rank">* الرتبة الحالية</label>
+      <select class="form-select" aria-label="Default select example"  
+      [(ngModel)]="registerDirectorService.formData.rankId" name="rank" required>
+        <option *ngFor="let rank of rankList" style="text-align: right;"
+          value={{rank.id}}>{{rank.rankName}}</option>     
+      </select>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="specialization" class="text-right">الاختصاص</label>
+            <input class="form-control" type="text" placeholder="الاختصاص"
+            name="specialization" id="specialization" #specialization="ngModel" [(ngModel)]="registerDirectorService.formData.specialization">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="scientificCrtificate">الشهادة العلمية</label>
+        <input class="form-control" type="text" placeholder="الشهادة العلمية"
+        name="scientificCrtificate" id="scientificCrtificate" #scientificCrtificate="ngModel" 
+        [(ngModel)]="registerDirectorService.formData.scientificCrtificate">      
+      </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="demarcationDate" class="text-right">تاريخ الترسيم</label>
+            <input class="form-control" type="date" name="demarcationDate" id="demarcationDate"
+            #demarcationDate="ngModel" [(ngModel)]="registerDirectorService.formData.demarcationDate">          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="assignmentDate">تاريخ الانتداب</label>
+        <input class="form-control" type="date" name="assignmentDate" id="assignmentDate"
+        #assignmentDate="ngModel" [(ngModel)]="registerDirectorService.formData.assignmentDate"> 
+        
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-4 offset-md-6">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="newTeacherScience" name="newTeacherScience"
+            #newTeacherScience="ngModel" [(ngModel)]="registerDirectorService.formData.newTeacherScience">
+            <label class="form-check-label" for="newTeacherScience">معلم جديد من خريجي علوم التربية</label>
+          </div> 
+      </div>
+      <div class="col-md-2">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="newTeacher" name="newTeacher"
+            #newTeacher="ngModel" [(ngModel)]="registerDirectorService.formData.newTeacher">
+            <label class="form-check-label" for="newTeacher">معلم جديد بالدائرة</label>
+          </div>
+      </div>
+  </div>
+      </div>
+  
+      <!-- التفقد -->
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row mt-3">
+          <h5><u>خلاصة التفقد الأخير</u></h5>
+        </div>
+        
+        <table class="table">
+        <thead class="thead-light">
+          <tr class="text-center">
+            <th>المتفقد(ة)</th>
+            <th>الدائرة</th>
+            <th>المدرسة</th>
+            <th>اللغة</th>
+            <th>العدد</th>
+            <th>التاريخ</th>
+            <th>معني بالتفقد</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  class="text-center">
+            <td><input type="text" class="form-control" name="inspectorName"
+               #inspectorName="ngModel" [(ngModel)]="registerDirectorService.formData.inspectorName"></td>
+        
+            <td><input type="text" class="form-control" name="circle"
+              #circle="ngModel" [(ngModel)]="registerDirectorService.formData.circle"></td>
+        
+            <td><input type="text" class="form-control" name="school"
+              #school="ngModel" [(ngModel)]="registerDirectorService.formData.school"></td>
+             
+            <td><input type="text" class="form-control" name="language"
+              #language="ngModel" [(ngModel)]="registerDirectorService.formData.language"></td>
+        
+            <td><input type="text" class="form-control" name="number"
+              #number="ngModel" [(ngModel)]="registerDirectorService.formData.number"></td>
+        
+            <td><input type="date" class="form-control" name="controlDate"
+              #controlDate="ngModel" [(ngModel)]="registerDirectorService.formData.controlDate"></td>
+            <td>
+              <div class="form-check px-5">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="inspectorStatus"
+                #inspectorStatus="ngModel" [(ngModel)]="registerDirectorService.formData.inspectorStatus">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+        
+        <div class="form-group">
+        <label for="comment">رسالة</label>
+        <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="100"
+        #comment="ngModel" [(ngModel)]="registerDirectorService.formData.comment"></textarea>
+        </div>
+      </div>
+  
+      <!-- كلمة السر  -->
+      <div class="tab-password fade"  id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+        
+        <div class="row">
+        
+            <div class="col-md-6">
+              <label for="confirmPassword"> تأكيد كلمة السر</label>
+              <input class="form-control" type="password" pattern="{{registerDirectorService.formData.password}}"
+              name="confirmPassword" id="password1" [(ngModel)]="confirmPassword1"
+              #cpass="ngModel" [readonly]="registerDirectorService.formData.password ==null" required
+              >
+              <span class="text-danger" *ngIf="cpass.invalid && cpass.touched && registerDirectorService.formData.password !==null">
+                
+                هنا يجب كتابة كلمة السر مطابقة للأولى
+  
+              </span>
+            </div>
+  
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="password" class="text-right"> * كلمة السر</label>
+                  <input class="form-control" type="password" name="password" id="password1"    
+                  #password="ngModel" [(ngModel)]="registerDirectorService.formData.password" 
+                  [class.invalid]="password.invalid && password.touched" required
+                  >
+              </div>
+            </div>
+        </div>
+        
+  
+      </div>
+    </div>
+  
+    
+  <div class="form-group" style="text-align: end;">
+    <button class="btn btn-info btn-block mt-1" type="submit" [disabled]="form.invalid">تسجيل</button>
+  </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </section>
+  </div>
+  
+  

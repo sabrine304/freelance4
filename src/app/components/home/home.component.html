@@ -1,0 +1,12 @@
+
+
+
+
+<div *ngIf="isUserAuthentificated()" style="color: blue;">
+    <h2>You are logged In</h2>
+</div>
+
+<a routerLink="/customers">Customers</a>
+<a routerLink="/login" (click)="logOut()">LogOut</a>
+
+<router-outlet></router-outlet>
